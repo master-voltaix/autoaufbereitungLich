@@ -711,8 +711,6 @@ def build_simple():
 <p>Inhaber: Christoph Widerynski</p>
 <h2>Kontakt</h2>
 <p>Telefon: <a href="{TEL_HREF}">{TEL}</a><br>E-Mail: <a href="mailto:{MAIL}">{MAIL}</a></p>
-<h2>Registereintrag</h2>
-<p class="todo">Eintragung im Handelsregister. Registergericht: [Amtsgericht eintragen] · Registernummer: HRA [Nummer eintragen]</p>
 <h2>Umsatzsteuer-Identifikationsnummer</h2>
 <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: DE256197693</p>
 <h2>Verantwortlich für den Inhalt</h2>
