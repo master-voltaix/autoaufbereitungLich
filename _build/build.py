@@ -20,16 +20,14 @@ MAPS = "https://www.google.com/maps/dir/?api=1&destination=Walter-Frese-Str.+16,
 
 # Bilder und Kurzpunkte je Leistung
 EXTRA = {
-    "autoaufbereitung": dict(img_alt="Frisch aufbereitete dunkelblaue Limousine", img2_alt="Aufbereitung eines Fahrzeugs in der Werkstatt", img="fahrzeug-komplett", img2="werkstatt", pts=["Innen und außen in einem Termin", "Lack, Felgen, Scheiben und Innenraum", "Ideal vor Verkauf oder nach dem Winter"]),
-    "innenraumreinigung": dict(img_alt="Polsterreinigung eines Autositzes mit Bürste und Schaum", img2_alt="Lederpflege eines Autositzes", img="innenraumreinigung", img2="lederpflege", pts=["Polster und Teppiche tiefengereinigt", "Leder gereinigt und gepflegt", "Tierhaare, Flecken und Gerüche"]),
-    "aussenaufbereitung": dict(img_alt="Handwäsche eines Fahrzeugs mit Waschhandschuh und Schaum", img2_alt="Felgenreinigung von Hand mit Pinsel", img="aussenaufbereitung", img2="felgenreinigung", pts=["Schonende Handwäsche", "Felgen, Radkästen und Türfalze", "Flugrost und Teer entfernen"]),
-    "lackpolitur": dict(img_alt="Maschinelle Lackpolitur auf einer schwarzen Motorhaube", img2_alt="Wasserperlen auf poliertem Lack", img="lackpolitur", img2="lack-abperleffekt", pts=["Waschkratzer und Hologramme entfernen", "Matte Stellen auffrischen", "Tiefer Glanz mit Versiegelung"]),
-    "keramikversiegelung": dict(img_alt="Auftragen einer Keramikversiegelung auf dunkelblauem Lack", img2_alt="Wasserperlen auf versiegeltem Lack", img="keramikversiegelung", img2="lack-abperleffekt", pts=["Langanhaltender Lackschutz", "Satter Glanz und Abperleffekt", "Leichtere Reinigung"]),
-    "lackierung": dict(img_alt="Lackierer trägt Klarlack auf einen Kotflügel auf", img2_alt="Karosserieteil wird in der Lackierkabine lackiert", img="lackierung", img2="lackierkabine", pts=["Teil- und Ganzlackierung", "Farbton am Fahrzeug abgestimmt", "Stoßfänger, Türen und Anbauteile"]),
-    "smart-repair": dict(img_alt="Punktuelle Lackreparatur an einem Stoßfänger", img2_alt="Politur der reparierten Stelle", img="smart-repair", img2="lackpolitur", pts=["Kratzer und Steinschläge", "Punktuell statt komplett lackieren", "Spart Zeit und Kosten"]),
-    "gutachten": dict(img_alt="Schadensaufnahme mit Tablet an einem Unfallfahrzeug", img2_alt="Dokumentation eines Lackschadens an der Karosserie", img="gutachten", img2="gutachten-detail", pts=["Schaden fachgerecht dokumentiert", "Reparaturkosten und Wertminderung", "Grundlage für die Versicherung"]),
-    "unfallschadenabwicklung": dict(img_alt="Schadensaufnahme am Heck eines Unfallfahrzeugs", img2_alt="Karosseriearbeiten an einem Kotflügel", img="unfallschaden", img2="karosserie-reparatur", pts=["Ein Ansprechpartner für alles", "Abstimmung mit der Versicherung", "Reparatur und Lackierung im Haus"]),
-    "leasingrueckgabe": dict(img_alt="Lackkontrolle mit Prüflampe vor der Leasingrückgabe", img2_alt="Aufbereitetes Fahrzeug in der Halle", img="leasingrueckgabe", img2="fahrzeug-komplett", pts=["Bestandsaufnahme am Fahrzeug", "Kratzer und Innenraum in Ordnung bringen", "Teure Nachberechnungen vermeiden"]),
+    "autoaufbereitung": dict(img="fahrzeug-komplett", img2="werkstatt", img_alt="Frisch aufbereitete dunkelblaue Limousine", img2_alt="Aufbereitung eines Fahrzeugs in der Werkstatt", pts=["Schonende Handwäsche statt Waschstraße", "Felgen, Lack, Scheiben und Innenraum", "Ideal vor Verkauf oder nach dem Winter"]),
+    "innenraumreinigung": dict(img="innenraumreinigung", img2="lederpflege", img_alt="Polsterreinigung eines Autositzes mit Bürste und Schaum", img2_alt="Lederpflege eines Autositzes", pts=["Polster und Teppiche tiefengereinigt", "Leder gereinigt und gepflegt", "Tierhaare, Flecken und Gerüche"]),
+    "lackpolitur": dict(img="lackpolitur", img2="lack-abperleffekt", img_alt="Maschinelle Lackpolitur auf einer schwarzen Motorhaube", img2_alt="Wasserperlen auf poliertem Lack", pts=["Waschkratzer und Hologramme entfernen", "Matte Stellen auffrischen", "Tiefer Glanz mit Versiegelung"]),
+    "lackierung": dict(img="lackierung", img2="smart-repair", img_alt="Lackierer trägt Klarlack auf einen Kotflügel auf", img2_alt="Punktuelle Lackreparatur an einem Stoßfänger", pts=["Smart Repair für Kratzer und Steinschläge", "Teil- und Ganzlackierung", "Farbton am Fahrzeug abgestimmt"]),
+    "unfallschadenabwicklung": dict(img="unfallschaden", img2="karosserie-reparatur", img_alt="Schadensaufnahme am Heck eines Unfallfahrzeugs", img2_alt="Karosseriearbeiten an einem Kotflügel", pts=["Ein Ansprechpartner für alles", "Abstimmung mit der Versicherung", "Reparatur und Lackierung im Haus"]),
+    "gutachten": dict(img="gutachten", img2="gutachten-detail", img_alt="Schadensaufnahme mit Tablet an einem Unfallfahrzeug", img2_alt="Dokumentation eines Lackschadens an der Karosserie", pts=["Schaden fachgerecht dokumentiert", "Reparaturkosten und Wertminderung", "Grundlage für die Versicherung"]),
+    "ersatzwagen": dict(img="ersatzwagen", img2="fahrzeuguebergabe", img_alt="Schlüsselübergabe für einen Ersatzwagen", img2_alt="Fahrzeugübergabe in der Werkstatt", pts=["Mobil während der Reparatur", "Übergabe direkt bei Abgabe", "Bei Unfallschäden mit der Versicherung abgestimmt"]),
+    "leasingrueckgabe": dict(img="leasingrueckgabe", img2="fahrzeug-komplett", img_alt="Lackkontrolle mit Prüflampe vor der Leasingrückgabe", img2_alt="Aufbereitetes Fahrzeug in der Halle", pts=["Bestandsaufnahme am Fahrzeug", "Kratzer und Innenraum in Ordnung bringen", "Teure Nachberechnungen vermeiden"]),
 }
 for _s in SERVICES:
     _s.update(EXTRA[_s["slug"]])
@@ -94,13 +92,14 @@ INC_RULES = [
     ("clock", ["aushärtung"]),
     ("doc", ["pflegehinweise"]),
     ("search", ["bestandsaufnahme", "besichtigung", "schadensaufnahme"]),
-    ("doc", ["gutachten", "dokumentation", "versicherung", "reparaturkosten", "wertminderung"]),
+    ("doc", ["konditionen", "gutachten", "dokumentation", "versicherung", "reparaturkosten", "wertminderung"]),
     ("wrench", ["karosserie"]),
     ("wrench", ["motorraum"]),
     ("target", ["smart repair", "kratzer", "steinschl", "parkrempler", "lackabplatzer"]),
     ("spray", ["lackierung", "stoßfänger", "kotflügel", "spiegel", "schrammen"]),
     ("drop", ["wäsche", "lackreinigung", "flugrost"]),
-    ("car", ["türfalze"]),
+    ("car", ["türfalze", "ersatzwagen", "übergabe", "rückgabe bei"]),
+    ("clock", ["reservierung"]),
 ]
 
 
@@ -123,7 +122,7 @@ HOME_FAQ = HOME_FAQ + [
     ("Wie bekomme ich ein Angebot?", "Am schnellsten über das Formular oder per Anruf. Beschreiben Sie kurz Fahrzeug und Zustand – gern auch mit Fotos per E-Mail. Sie erhalten dann ein unverbindliches Angebot."),
     ("Kann ich mehrere Leistungen kombinieren?", "Ja. Aufbereitung, Politur und Lackarbeiten lassen sich gut in einem Termin verbinden. Wir stimmen die Reihenfolge der Arbeiten für Sie ab."),
     ("Reparieren Sie auch Kratzer und kleine Lackschäden?", "Ja. Oberflächliche Kratzer entfernen wir mit einer Politur. Tiefere Schäden beheben wir per Smart Repair oder Lackierung – alles im selben Betrieb."),
-    ("Lohnt sich eine Keramikversiegelung?", "Wenn Sie Ihr Fahrzeug länger fahren und Wert auf einen gepflegten Lack legen, ja. Der Lack ist besser geschützt und lässt sich deutlich leichter reinigen."),
+    ("Bekomme ich einen Ersatzwagen?", "Auf Wunsch ja – nach Verfügbarkeit. Sagen Sie bei der Terminvergabe Bescheid, dann reservieren wir einen Ersatzwagen für die Dauer der Arbeiten."),
     ("Aus welchen Orten kommen Ihre Kunden?", "Unser Betrieb liegt in Leichlingen. Viele Kunden kommen auch aus Langenfeld, Leverkusen, Solingen und Burscheid."),
 ]
 
@@ -417,12 +416,12 @@ def build_home():
     }, ensure_ascii=False, indent=1)
     extra = f'<link rel="preload" href="assets/img/hero-poster.webp" as="image">\n<script type="application/ld+json">\n{ld}\n</script>\n'
     h = head("Autoaufbereitung &amp; Lackierung in Leichlingen | Autopflege Leichlingen",
-             "Autopflege Leichlingen: Autoaufbereitung, Innenraumreinigung, Lackpolitur, Keramikversiegelung und Lackierung in 42799 Leichlingen. Jetzt kostenloses Angebot anfragen: 0177 / 780 41 46.",
+             "Autopflege Leichlingen: Autoaufbereitung, Lackierung, Unfallschadenabwicklung und Gutachten in 42799 Leichlingen – auf Wunsch mit Ersatzwagen. Jetzt kostenloses Angebot anfragen: 0177 / 780 41 46.",
              "home", extra)
     h += header("home")
     video = '<video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.webp"><source src="assets/video/hero.mp4" type="video/mp4"></video>'
     h += hero("Autoaufbereitung &amp; Lackierung <em>in Leichlingen</em>",
-              "Innenraumreinigung, Lackpolitur, Keramikversiegelung und Lackierarbeiten – dazu Gutachten und Unfallschadenabwicklung. Alles aus einer Hand.",
+              "Aufbereitung, Lackpolitur und Lackierung – dazu Gutachten, Unfallschadenabwicklung und Ersatzwagen. Alles aus einer Hand.",
               video, form())
     h += benefits()
     h += f'''
@@ -531,16 +530,14 @@ def build_home():
 
 
 # ---------------------------------------------------------------- Leistungsseiten
-PICK = {"autoaufbereitung": ["innenraumreinigung", "aussenaufbereitung", "lackpolitur", "keramikversiegelung"],
-        "innenraumreinigung": ["autoaufbereitung", "aussenaufbereitung", "leasingrueckgabe", "lackpolitur"],
-        "aussenaufbereitung": ["lackpolitur", "keramikversiegelung", "innenraumreinigung", "autoaufbereitung"],
-        "lackpolitur": ["keramikversiegelung", "smart-repair", "aussenaufbereitung", "autoaufbereitung"],
-        "keramikversiegelung": ["lackpolitur", "aussenaufbereitung", "autoaufbereitung", "lackierung"],
-        "lackierung": ["smart-repair", "lackpolitur", "leasingrueckgabe", "keramikversiegelung"],
-        "smart-repair": ["lackierung", "lackpolitur", "leasingrueckgabe", "autoaufbereitung"],
-        "leasingrueckgabe": ["smart-repair", "lackierung", "innenraumreinigung", "lackpolitur"],
-        "gutachten": ["unfallschadenabwicklung", "lackierung", "smart-repair", "autoaufbereitung"],
-        "unfallschadenabwicklung": ["gutachten", "lackierung", "smart-repair", "autoaufbereitung"]}
+PICK = {"autoaufbereitung": ["innenraumreinigung", "lackpolitur", "lackierung", "leasingrueckgabe"],
+        "innenraumreinigung": ["autoaufbereitung", "lackpolitur", "leasingrueckgabe", "lackierung"],
+        "lackpolitur": ["lackierung", "autoaufbereitung", "innenraumreinigung", "leasingrueckgabe"],
+        "lackierung": ["unfallschadenabwicklung", "lackpolitur", "gutachten", "leasingrueckgabe"],
+        "unfallschadenabwicklung": ["gutachten", "ersatzwagen", "lackierung", "autoaufbereitung"],
+        "gutachten": ["unfallschadenabwicklung", "ersatzwagen", "lackierung", "lackpolitur"],
+        "ersatzwagen": ["unfallschadenabwicklung", "gutachten", "lackierung", "autoaufbereitung"],
+        "leasingrueckgabe": ["lackierung", "lackpolitur", "innenraumreinigung", "autoaufbereitung"]}
 
 
 def build_service(s):
@@ -555,7 +552,7 @@ def build_service(s):
   <div class="container">
     <div class="sec__head rv">
       <span class="kicker">Leistungsumfang</span>
-      <h2>Das gehört zur {s["card"]}</h2>
+      <h2>Das gehört {"zum" if s["slug"] in ("ersatzwagen", "gutachten") else "zur"} {s["card"]}</h2>
     </div>
     <ul class="incl">{"".join(f'<li class="rv" style="--d:{(i % 3) * .08:.2f}s"><span class="incl__ico">{inc_icon(x)}</span>{x}</li>' for i, x in enumerate(s["inc"]))}</ul>
   </div>
@@ -611,7 +608,7 @@ def build_service(s):
 # ---------------------------------------------------------------- Übersicht, Über uns, Kontakt
 def build_leistungen():
     h = head("Leistungen: Aufbereitung &amp; Lackierung in Leichlingen | " + FIRMA,
-             "Alle Leistungen von Autopflege Leichlingen: Autoaufbereitung, Innenraumreinigung, Lackpolitur, Keramikversiegelung, Lackierung und Smart Repair.", "leistungen")
+             "Alle Leistungen von Autopflege Leichlingen: Autoaufbereitung, Innenraumreinigung, Lackpolitur, Lackierung, Unfallschadenabwicklung, Gutachten, Ersatzwagen und Leasingrückgabe.", "leistungen")
     h += header("leistungen")
     h += hero("Unsere Leistungen <em>in Leichlingen</em>", "Aufbereitung und Lackierung aus einer Hand. Wählen Sie eine Leistung für mehr Details – oder fragen Sie direkt ein Angebot an.",
               img("lackpolitur", "", lazy=False), form(), sub=True)
