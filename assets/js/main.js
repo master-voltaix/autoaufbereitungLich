@@ -116,7 +116,11 @@
 
       btn.disabled = true;
       btn.textContent = 'Wird gesendet …';
-      fetch(form.getAttribute('action'), { method: 'POST', body: new FormData(form), headers: { 'X-Requested-With': 'fetch' } })
+      fetch(form.getAttribute('action'), {
+        method: 'POST',
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'fetch' }
+      })
         .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
         .then(function (d) {
           if (!d || !d.ok) return Promise.reject();
@@ -124,7 +128,7 @@
           window.location.href = 'danke.html';
         })
         .catch(function () {
-          // Kein Versand-Skript erreichbar (z. B. lokale Vorschau): E-Mail-Programm öffnen
+          // Versand fehlgeschlagen oder lokale Vorschau ohne Server-Funktion: E-Mail-Programm öffnen
           btn.disabled = false;
           btn.textContent = 'Anfrage senden';
           mailFallback();

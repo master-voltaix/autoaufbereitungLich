@@ -20,13 +20,15 @@ MAPS = "https://www.google.com/maps/dir/?api=1&destination=Walter-Frese-Str.+16,
 
 # Bilder und Kurzpunkte je Leistung
 EXTRA = {
-    "autoaufbereitung": dict(img_alt="Frisch aufbereitete dunkelblaue Limousine", img2_alt="Fahrzeug in der Aufbereitungshalle", img="fahrzeug-komplett", img2="werkstatt", pts=["Innen und außen in einem Termin", "Lack, Felgen, Scheiben und Innenraum", "Ideal vor Verkauf oder nach dem Winter"]),
+    "autoaufbereitung": dict(img_alt="Frisch aufbereitete dunkelblaue Limousine", img2_alt="Aufbereitung eines Fahrzeugs in der Werkstatt", img="fahrzeug-komplett", img2="werkstatt", pts=["Innen und außen in einem Termin", "Lack, Felgen, Scheiben und Innenraum", "Ideal vor Verkauf oder nach dem Winter"]),
     "innenraumreinigung": dict(img_alt="Polsterreinigung eines Autositzes mit Bürste und Schaum", img2_alt="Lederpflege eines Autositzes", img="innenraumreinigung", img2="lederpflege", pts=["Polster und Teppiche tiefengereinigt", "Leder gereinigt und gepflegt", "Tierhaare, Flecken und Gerüche"]),
     "aussenaufbereitung": dict(img_alt="Handwäsche eines Fahrzeugs mit Waschhandschuh und Schaum", img2_alt="Felgenreinigung von Hand mit Pinsel", img="aussenaufbereitung", img2="felgenreinigung", pts=["Schonende Handwäsche", "Felgen, Radkästen und Türfalze", "Flugrost und Teer entfernen"]),
     "lackpolitur": dict(img_alt="Maschinelle Lackpolitur auf einer schwarzen Motorhaube", img2_alt="Wasserperlen auf poliertem Lack", img="lackpolitur", img2="lack-abperleffekt", pts=["Waschkratzer und Hologramme entfernen", "Matte Stellen auffrischen", "Tiefer Glanz mit Versiegelung"]),
     "keramikversiegelung": dict(img_alt="Auftragen einer Keramikversiegelung auf dunkelblauem Lack", img2_alt="Wasserperlen auf versiegeltem Lack", img="keramikversiegelung", img2="lack-abperleffekt", pts=["Langanhaltender Lackschutz", "Satter Glanz und Abperleffekt", "Leichtere Reinigung"]),
     "lackierung": dict(img_alt="Lackierer trägt Klarlack auf einen Kotflügel auf", img2_alt="Karosserieteil wird in der Lackierkabine lackiert", img="lackierung", img2="lackierkabine", pts=["Teil- und Ganzlackierung", "Farbton am Fahrzeug abgestimmt", "Stoßfänger, Türen und Anbauteile"]),
     "smart-repair": dict(img_alt="Punktuelle Lackreparatur an einem Stoßfänger", img2_alt="Politur der reparierten Stelle", img="smart-repair", img2="lackpolitur", pts=["Kratzer und Steinschläge", "Punktuell statt komplett lackieren", "Spart Zeit und Kosten"]),
+    "gutachten": dict(img_alt="Schadensaufnahme mit Tablet an einem Unfallfahrzeug", img2_alt="Dokumentation eines Lackschadens an der Karosserie", img="gutachten", img2="gutachten-detail", pts=["Schaden fachgerecht dokumentiert", "Reparaturkosten und Wertminderung", "Grundlage für die Versicherung"]),
+    "unfallschadenabwicklung": dict(img_alt="Schadensaufnahme am Heck eines Unfallfahrzeugs", img2_alt="Karosseriearbeiten an einem Kotflügel", img="unfallschaden", img2="karosserie-reparatur", pts=["Ein Ansprechpartner für alles", "Abstimmung mit der Versicherung", "Reparatur und Lackierung im Haus"]),
     "leasingrueckgabe": dict(img_alt="Lackkontrolle mit Prüflampe vor der Leasingrückgabe", img2_alt="Aufbereitetes Fahrzeug in der Halle", img="leasingrueckgabe", img2="fahrzeug-komplett", pts=["Bestandsaufnahme am Fahrzeug", "Kratzer und Innenraum in Ordnung bringen", "Teure Nachberechnungen vermeiden"]),
 }
 for _s in SERVICES:
@@ -55,6 +57,74 @@ BENEFITS = [
     ("price", "Preis steht vorher fest", "Sie bekommen ein Angebot, bevor wir anfangen. Keine Überraschung bei der Abholung."),
     ("spray", "Aufbereitung & Lack aus einer Hand", "Reinigung, Politur und Lackierung – ohne mehrere Betriebe anzufahren."),
     ("date", "Fester Termin", "Abgabe und Abholung stimmen wir verbindlich mit Ihnen ab."),
+]
+
+
+# Kleine Symbole für den Leistungsumfang; Zuordnung über Stichwörter im Text
+def _i(body):
+    return '<svg viewBox="0 0 24 24" aria-hidden="true">' + body + '</svg>'
+
+
+INC_ICON = {
+    "drop": _i('<path d="M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/><path d="M9.5 14.5a2.500 2.500 0 0 0 2.500 2.500"/>'),
+    "seat": _i('<path d="M7 4h4a2 2 0 0 1 2 2v7h4a2 2 0 0 1 2 2v2H9a2 2 0 0 1-2-2z"/><path d="M9 17v3M17 17v3"/>'),
+    "sparkle": _i('<path d="M11 3l1.900 5.100L18 10l-5.100 1.900L11 17l-1.900-5.100L4 10l5.100-1.900z"/><path d="M19 15v5M16.500 17.500h5"/>'),
+    "wheel": _i('<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.500"/><path d="M12 3v6.500M12 14.500V21M3 12h6.500M14.500 12H21"/>'),
+    "glass": _i('<path d="M3.500 17l2.300-8.500A2 2 0 0 1 7.700 7h8.600a2 2 0 0 1 1.900 1.500L20.500 17z"/><path d="M9 14l2.500-3.500M13 14.500l1.500-2"/>'),
+    "shield": _i('<path d="M12 3l7 3v5c0 4.500-3 8-7 10-4-2-7-5.500-7-10V6z"/><path d="M9 12l2 2 4-4"/>'),
+    "spray": _i('<path d="M3 8h11v4H3z"/><path d="M14 9h3v2h-3M6 8V4h5v4M6 12l-1.500 8h4l1.500-8"/><path d="M20 7l1.500-1M20.500 10h2M20 13l1.500 1"/>'),
+    "palette": _i('<path d="M12 3a9 9 0 1 0 0 18c1.500 0 2-1 2-2s-.500-2 1-2h2a4 4 0 0 0 4-4c0-4.500-4-8-9-8z"/><circle cx="8" cy="11" r="1"/><circle cx="11.500" cy="7.500" r="1"/><circle cx="16" cy="9" r="1"/>'),
+    "clock": _i('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'),
+    "doc": _i('<path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h3"/>'),
+    "search": _i('<circle cx="10.500" cy="10.500" r="6.500"/><path d="M15.500 15.500L21 21"/>'),
+    "target": _i('<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>'),
+    "wrench": _i('<path d="M15 4a4.500 4.500 0 0 0 5 6l-9.500 9.500a2.100 2.100 0 0 1-3-3L17 7z"/>'),
+    "paw": _i('<circle cx="7" cy="9" r="1.800"/><circle cx="12" cy="6.500" r="1.800"/><circle cx="17" cy="9" r="1.800"/><path d="M12 12c-3 0-5 2.500-5 5a2.500 2.500 0 0 0 2.500 2.500c1 0 1.500-.500 2.500-.500s1.500.500 2.500.500A2.500 2.500 0 0 0 17 17c0-2.500-2-5-5-5z"/>'),
+    "car": _i('<path d="M3 16v-3l2-1 2-4.500h10l2 4.500 2 1v3h-2M5 16H3M10 16h4"/><circle cx="7.500" cy="16" r="2"/><circle cx="16.500" cy="16" r="2"/>'),
+    "check": _i('<path d="M5 12.500l4.500 4.500L19 7.500"/>'),
+}
+INC_RULES = [
+    ("shield", ["versiegelung", "wachs", "lackpflege"]),
+    ("sparkle", ["politur", "polier", "hologramm", "matte ", "finish", "angleichen"]),
+    ("paw", ["tierhaare"]),
+    ("wheel", ["felgen", "radk"]),
+    ("glass", ["scheibe", "scheinwerfer"]),
+    ("seat", ["saugen", "innenraum", "polster", "teppich", "armaturen", "kunststoff", "leder"]),
+    ("palette", ["farbton"]),
+    ("clock", ["aushärtung"]),
+    ("doc", ["pflegehinweise"]),
+    ("search", ["bestandsaufnahme", "besichtigung", "schadensaufnahme"]),
+    ("doc", ["gutachten", "dokumentation", "versicherung", "reparaturkosten", "wertminderung"]),
+    ("wrench", ["karosserie"]),
+    ("wrench", ["motorraum"]),
+    ("target", ["smart repair", "kratzer", "steinschl", "parkrempler", "lackabplatzer"]),
+    ("spray", ["lackierung", "stoßfänger", "kotflügel", "spiegel", "schrammen"]),
+    ("drop", ["wäsche", "lackreinigung", "flugrost"]),
+    ("car", ["türfalze"]),
+]
+
+
+def inc_icon(text):
+    t = text.lower()
+    for key, words in INC_RULES:
+        if any(w in t for w in words):
+            return INC_ICON[key]
+    return INC_ICON["check"]
+
+
+# Zusätzliche Fragen, die auf jeder Leistungsseite ergänzt werden
+MORE_FAQ = [
+    ("Wie bekomme ich ein Angebot?", "Am schnellsten über das Formular auf dieser Seite oder per Anruf. Beschreiben Sie kurz Fahrzeug und Zustand – gern auch mit Fotos per E-Mail. Sie erhalten dann ein unverbindliches Angebot."),
+    ("Brauche ich einen Termin?", "Ja, wir arbeiten nach Terminvereinbarung. So können wir uns ohne Zeitdruck um Ihr Fahrzeug kümmern."),
+    ("Kann ich mehrere Leistungen kombinieren?", "Ja. Aufbereitung, Politur und Lackarbeiten lassen sich gut in einem Termin verbinden. Wir stimmen die Reihenfolge der Arbeiten für Sie ab."),
+    ("Aus welchen Orten kommen Ihre Kunden?", "Unser Betrieb liegt in Leichlingen. Viele Kunden kommen auch aus Langenfeld, Leverkusen, Solingen und Burscheid."),
+]
+HOME_FAQ = HOME_FAQ + [
+    ("Wie bekomme ich ein Angebot?", "Am schnellsten über das Formular oder per Anruf. Beschreiben Sie kurz Fahrzeug und Zustand – gern auch mit Fotos per E-Mail. Sie erhalten dann ein unverbindliches Angebot."),
+    ("Kann ich mehrere Leistungen kombinieren?", "Ja. Aufbereitung, Politur und Lackarbeiten lassen sich gut in einem Termin verbinden. Wir stimmen die Reihenfolge der Arbeiten für Sie ab."),
+    ("Reparieren Sie auch Kratzer und kleine Lackschäden?", "Ja. Oberflächliche Kratzer entfernen wir mit einer Politur. Tiefere Schäden beheben wir per Smart Repair oder Lackierung – alles im selben Betrieb."),
+    ("Lohnt sich eine Keramikversiegelung?", "Wenn Sie Ihr Fahrzeug länger fahren und Wert auf einen gepflegten Lack legen, ja. Der Lack ist besser geschützt und lässt sich deutlich leichter reinigen."),
+    ("Aus welchen Orten kommen Ihre Kunden?", "Unser Betrieb liegt in Leichlingen. Viele Kunden kommen auch aus Langenfeld, Leverkusen, Solingen und Burscheid."),
 ]
 
 
@@ -153,7 +223,7 @@ def form(preselect="", title="Kostenloses Angebot anfordern", sub="In 1 Minute a
     return f'''<div class="formcard{" formcard--flat" if flat else ""}" id="{fid}">
   <h2 class="formcard__title">{title}</h2>
   <p class="formcard__sub">{sub}</p>
-  <form class="form js-form" action="send.php" method="post" novalidate>
+  <form class="form js-form" action="/api/send" method="post" novalidate>
     <label>Name *<input type="text" name="name" autocomplete="name" required></label>
     <label>Telefon *<input type="tel" name="telefon" autocomplete="tel" inputmode="tel" required></label>
     <label>Gewünschte Leistung
@@ -169,13 +239,9 @@ def form(preselect="", title="Kostenloses Angebot anfordern", sub="In 1 Minute a
 </div>'''
 
 
-def hero(h1, lead, media, formhtml, crumbs=None, sub=False):
-    if crumbs:
-        top = '<ol class="crumbs"><li><a href="index.html">Startseite</a></li>' + "".join(
-            f'<li><a href="{u}">{t}</a></li>' if u else f"<li>{t}</li>" for t, u in crumbs) + "</ol>"
-    else:
-        top = f'<p class="hero__place">{ICO["pin"]}{STRASSE} · {ORT}</p>'
-    return f'''<section class="hero{" hero--sub" if sub else ""}">
+def hero(h1, lead, media, formhtml, crumbs=None, sub=False, flat=False):
+    top = f'<p class="hero__place">{ICO["pin"]}{STRASSE} · {ORT}</p>'
+    return f'''<section class="hero{" hero--sub" if sub else ""}{" hero--flat" if flat else ""}">
   <div class="hero__media" aria-hidden="true">{media}</div>
   <div class="container hero__inner">
     <div>
@@ -197,12 +263,19 @@ def hero(h1, lead, media, formhtml, crumbs=None, sub=False):
 </section>'''
 
 
-def benefits():
+def benefits(inline=False):
     cards = "".join(f'''<li class="benefit rv" style="--d:{i * .09:.2f}s">
         {PIC[k]}
         <h3>{amp(t)}</h3>
         <p>{p}</p>
       </li>''' for i, (k, t, p) in enumerate(BENEFITS))
+    if inline:
+        return f'''<section class="sec">
+  <div class="container">
+    <div class="sec__head rv"><span class="kicker">Ihre Vorteile</span><h2>Darauf können Sie sich verlassen</h2></div>
+    <ul class="benefits__grid benefits__grid--inline">{cards}</ul>
+  </div>
+</section>'''
     return f'''<section class="benefits" aria-label="Ihre Vorteile">
   <div class="container">
     <ul class="benefits__grid">{cards}</ul>
@@ -212,7 +285,7 @@ def benefits():
 
 def svc_cards(items=None):
     items = items or SERVICES
-    out = '<div class="cards">'
+    out = '<div class="cards cards--5">' if len(items) > 8 else '<div class="cards">'
     for i, s in enumerate(items):
         pts = "".join(f"<li>{p}</li>" for p in s["pts"])
         out += f'''<a class="card rv" style="--d:{(i % 4) * .08:.2f}s" href="{s["slug"]}.html">
@@ -349,7 +422,7 @@ def build_home():
     h += header("home")
     video = '<video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.webp"><source src="assets/video/hero.mp4" type="video/mp4"></video>'
     h += hero("Autoaufbereitung &amp; Lackierung <em>in Leichlingen</em>",
-              "Innenraumreinigung, Lackpolitur, Keramikversiegelung und Lackierarbeiten aus einer Hand – sorgfältig von Hand ausgeführt.",
+              "Innenraumreinigung, Lackpolitur, Keramikversiegelung und Lackierarbeiten – dazu Gutachten und Unfallschadenabwicklung. Alles aus einer Hand.",
               video, form())
     h += benefits()
     h += f'''
@@ -371,18 +444,18 @@ def build_home():
   <div class="container two">
     <div class="photo rv rv-l">{img("lackierung", "Lackierer trägt Klarlack auf einen Kotflügel auf")}</div>
     <div class="rv rv-r">
-      <span class="kicker">Lackierung &amp; Smart Repair</span>
+      <span class="kicker">Lackierung &amp; Unfallschaden</span>
       <h2>Lackschäden beheben, ohne dass man es später sieht</h2>
       <p class="lead">Parkrempler, verkratzter Stoßfänger oder Steinschlag: Kleine Schäden reparieren wir punktuell, größere Flächen lackieren wir fachgerecht neu.</p>
       <ul class="checks">
         <li>Teil- und Ganzlackierung</li>
         <li>Punktuelle Reparatur kleiner Schäden</li>
         <li>Farbton direkt am Fahrzeug abgestimmt</li>
-        <li>Angebot auch anhand Ihrer Fotos</li>
+        <li>Gutachten und Unfallschadenabwicklung aus einer Hand</li>
       </ul>
       <div class="btns">
         <a class="btn btn--red" href="lackierung.html">Zur Lackierung {ARROW}</a>
-        <a class="btn btn--white" href="smart-repair.html">Smart Repair</a>
+        <a class="btn btn--white" href="unfallschadenabwicklung.html">Unfallschaden</a>
       </div>
     </div>
   </div>
@@ -435,7 +508,7 @@ def build_home():
         <a class="btn btn--line" href="kontakt.html">Anfahrt</a>
       </div>
     </div>
-    <div class="photo rv rv-r">{img("werkstatt", "Fahrzeug in der Aufbereitungshalle")}</div>
+    <div class="photo rv rv-r">{img("werkstatt", "Aufbereitung eines Fahrzeugs in der Werkstatt")}</div>
   </div>
 </section>
 
@@ -465,7 +538,9 @@ PICK = {"autoaufbereitung": ["innenraumreinigung", "aussenaufbereitung", "lackpo
         "keramikversiegelung": ["lackpolitur", "aussenaufbereitung", "autoaufbereitung", "lackierung"],
         "lackierung": ["smart-repair", "lackpolitur", "leasingrueckgabe", "keramikversiegelung"],
         "smart-repair": ["lackierung", "lackpolitur", "leasingrueckgabe", "autoaufbereitung"],
-        "leasingrueckgabe": ["smart-repair", "lackierung", "innenraumreinigung", "lackpolitur"]}
+        "leasingrueckgabe": ["smart-repair", "lackierung", "innenraumreinigung", "lackpolitur"],
+        "gutachten": ["unfallschadenabwicklung", "lackierung", "smart-repair", "autoaufbereitung"],
+        "unfallschadenabwicklung": ["gutachten", "lackierung", "smart-repair", "autoaufbereitung"]}
 
 
 def build_service(s):
@@ -474,10 +549,19 @@ def build_service(s):
     h += header(s["slug"])
     h += hero(amp(s["h1"]).replace(" in Leichlingen", " <em>in Leichlingen</em>"), s["lead"], img(s["img"], "", lazy=False),
               form(preselect=s["option"], title="Angebot anfragen"),
-              crumbs=[("Leistungen", "leistungen.html"), (s["card"], None)], sub=True)
-    h += benefits()
+              sub=True, flat=True)
     h += f'''
 <section class="sec">
+  <div class="container">
+    <div class="sec__head rv">
+      <span class="kicker">Leistungsumfang</span>
+      <h2>Das gehört zur {s["card"]}</h2>
+    </div>
+    <ul class="incl">{"".join(f'<li class="rv" style="--d:{(i % 3) * .08:.2f}s"><span class="incl__ico">{inc_icon(x)}</span>{x}</li>' for i, x in enumerate(s["inc"]))}</ul>
+  </div>
+</section>
+
+<section class="sec sec--soft">
   <div class="container two">
     <div class="rv rv-l">
       <span class="kicker">{s["card"]}</span>
@@ -492,19 +576,11 @@ def build_service(s):
   </div>
 </section>
 
-<section class="sec sec--navy">
-  <div class="container">
-    <div class="sec__head rv">
-      <span class="kicker">Leistungsumfang</span>
-      <h2>Das gehört dazu</h2>
-    </div>
-    <ul class="incl">{"".join(f'<li class="rv" style="--d:{(i % 3) * .08:.2f}s">{x}</li>' for i, x in enumerate(s["inc"]))}</ul>
-  </div>
-</section>
+{benefits(inline=True)}
 
-{flow()}
+{flow("sec sec--soft")}
 
-<section class="sec sec--soft">
+<section class="sec">
   <div class="container two two--top">
     <div class="rv">
       <span class="kicker">Gut zu wissen</span>
@@ -512,11 +588,11 @@ def build_service(s):
       {"".join(f'<p class="lead">{p}</p>' for p in s["pb"])}
       <div class="btns"><a class="btn btn--navy" href="#anfrage">Jetzt anfragen {ARROW}</a></div>
     </div>
-    <div class="rv" style="--d:.1s">{faq(s["faq"])}</div>
+    <div class="rv" style="--d:.1s">{faq(s["faq"] + [q for q in MORE_FAQ if q[0] not in [x[0] for x in s["faq"]]])}</div>
   </div>
 </section>
 
-<section class="sec">
+<section class="sec sec--soft">
   <div class="container">
     <div class="sec__head sec__head--row rv">
       <div><span class="kicker">Passt dazu</span><h2>Weitere Leistungen</h2></div>
@@ -538,7 +614,7 @@ def build_leistungen():
              "Alle Leistungen von Autopflege Leichlingen: Autoaufbereitung, Innenraumreinigung, Lackpolitur, Keramikversiegelung, Lackierung und Smart Repair.", "leistungen")
     h += header("leistungen")
     h += hero("Unsere Leistungen <em>in Leichlingen</em>", "Aufbereitung und Lackierung aus einer Hand. Wählen Sie eine Leistung für mehr Details – oder fragen Sie direkt ein Angebot an.",
-              img("lackpolitur", "", lazy=False), form(), crumbs=[("Leistungen", None)], sub=True)
+              img("lackpolitur", "", lazy=False), form(), sub=True)
     h += benefits()
     h += f'''
 <section class="sec">
@@ -559,7 +635,7 @@ def build_about():
              "Autopflege Leichlingen: Ihr Betrieb für Fahrzeugaufbereitung und Lackierung in der Walter-Frese-Str. 16, 42799 Leichlingen. Lernen Sie uns kennen.", "ueber-uns")
     h += header("ueber-uns")
     h += hero("Über Autopflege Leichlingen", "Fahrzeugaufbereitung und Lackierung direkt vor Ort – persönlich, sorgfältig und mit festen Absprachen.",
-              img("werkstatt", "", lazy=False), form(), crumbs=[("Über uns", None)], sub=True)
+              img("werkstatt", "", lazy=False), form(), sub=True)
     h += benefits()
     h += f'''
 <section class="sec">
@@ -591,7 +667,7 @@ def build_contact():
              "Kontakt zu Autopflege Leichlingen: Walter-Frese-Str. 16, 42799 Leichlingen, Telefon 0177 / 780 41 46. Jetzt Termin oder Angebot anfragen.", "kontakt")
     h += header("kontakt")
     h += hero("Kontakt &amp; Anfahrt", "Rufen Sie an oder schreiben Sie uns. Je genauer Sie Fahrzeug und Wunsch beschreiben, desto schneller können wir Ihnen ein Angebot machen.",
-              img("fahrzeug-komplett", "", lazy=False), form(), crumbs=[("Kontakt &amp; Anfahrt", None)], sub=True)
+              img("fahrzeug-komplett", "", lazy=False), form(), sub=True)
     h += benefits()
     h += f'''
 <section class="sec">
@@ -632,26 +708,62 @@ def build_simple():
 <div class="btns"><a class="btn btn--navy" href="index.html">Zur Startseite</a><a class="btn btn--line" href="leistungen.html">Leistungen ansehen</a></div>
 <script>window.dataLayer=window.dataLayer||[];window.dataLayer.push({{event:'lead_form_success'}});</script>''')
 
-    plain("Impressum", "Impressum von Autopflege Leichlingen.", "impressum", f'''<h1>Impressum</h1>
-<p class="todo" style="margin-top:24px">Platzhalter: Inhaber, Rechtsform und ggf. USt-IdNr. müssen vor der Veröffentlichung ergänzt werden.</p>
+    plain("Impressum", "Impressum von Autopflege Leichlingen – Christoph Widerynski e. K.", "impressum", f'''<h1>Impressum</h1>
 <h2>Angaben gemäß § 5 DDG</h2>
-<p>{FIRMA}<br>[Vor- und Nachname des Inhabers]<br>{STRASSE}<br>{ORT}</p>
+<p>Christoph Widerynski e. K.<br>{FIRMA}<br>{STRASSE}<br>{ORT}</p>
+<p>Inhaber: Christoph Widerynski</p>
 <h2>Kontakt</h2>
 <p>Telefon: <a href="{TEL_HREF}">{TEL}</a><br>E-Mail: <a href="mailto:{MAIL}">{MAIL}</a></p>
-<h2>Umsatzsteuer-ID</h2>
-<p>[USt-IdNr. gemäß § 27a UStG, falls vorhanden]</p>
+<h2>Registereintrag</h2>
+<p class="todo">Eintragung im Handelsregister. Registergericht: [Amtsgericht eintragen] · Registernummer: HRA [Nummer eintragen]</p>
+<h2>Umsatzsteuer-Identifikationsnummer</h2>
+<p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: DE256197693</p>
+<h2>Verantwortlich für den Inhalt</h2>
+<p>Christoph Widerynski, Anschrift wie oben</p>
+<h2>Verbraucherstreitbeilegung</h2>
+<p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+<h2>Haftung für Inhalte und Links</h2>
+<p>Die Inhalte dieser Website wurden mit Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität können wir jedoch keine Gewähr übernehmen. Für Inhalte externer Websites, auf die wir verlinken, sind ausschließlich deren Betreiber verantwortlich.</p>
 <h2>Bildnachweise</h2>
-<p>Video und einzelne Fotos: Freepik (lizenziert). Weitere Abbildungen wurden mit KI-Unterstützung erstellt und dienen der Veranschaulichung.</p>''')
+<p>Video und Fotos teilweise von Freepik (lizenziert). Einzelne Abbildungen wurden mit KI-Unterstützung erstellt und dienen der Veranschaulichung.</p>''')
 
-    plain("Datenschutz", "Datenschutzerklärung von Autopflege Leichlingen.", "datenschutz", f'''<h1>Datenschutz</h1>
-<p class="todo" style="margin-top:24px">Platzhalter: Diese Seite muss vor der Veröffentlichung durch eine vollständige, auf Hoster, Formularversand und Google Ads abgestimmte Datenschutzerklärung ersetzt werden.</p>
-<h2>Verantwortlicher</h2>
-<p>{FIRMA}<br>{STRASSE}, {ORT}<br>E-Mail: <a href="mailto:{MAIL}">{MAIL}</a></p>
-<h2>Kontaktaufnahme</h2>
-<p>Wenn Sie uns per Formular, E-Mail oder Telefon kontaktieren, verarbeiten wir Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage (Art. 6 Abs. 1 lit. b DSGVO).</p>
-<h2>Schriften und Medien</h2>
-<p>Schriften, Bilder und Videos dieser Website werden vom eigenen Server geladen. Die Karte auf der Kontaktseite wird erst nach Ihrem Klick von Google Maps geladen.</p>''')
+    plain("Datenschutz", "Datenschutzerklärung von Autopflege Leichlingen.", "datenschutz", f'''<h1>Datenschutzerklärung</h1>
+<p class="lead" style="margin-top:18px">Der Schutz Ihrer persönlichen Daten ist uns wichtig. Nachfolgend informieren wir Sie darüber, welche Daten beim Besuch dieser Website verarbeitet werden.</p>
 
+<h2>1. Verantwortlicher</h2>
+<p>Christoph Widerynski e. K.<br>{FIRMA}<br>{STRASSE}, {ORT}<br>Telefon: <a href="{TEL_HREF}">{TEL}</a><br>E-Mail: <a href="mailto:{MAIL}">{MAIL}</a></p>
+
+<h2>2. Hosting durch Vercel</h2>
+<p>Diese Website wird bei Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA gehostet. Beim Aufruf der Website verarbeitet Vercel technisch notwendige Daten, insbesondere Ihre IP-Adresse, Datum und Uhrzeit des Zugriffs, die aufgerufene Seite, den Referrer sowie Angaben zu Browser und Betriebssystem (Server-Logfiles). Diese Daten sind erforderlich, um die Website sicher und stabil auszuliefern.</p>
+<p>Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren und funktionsfähigen Bereitstellung der Website (Art. 6 Abs. 1 lit. f DSGVO). Mit Vercel besteht ein Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO). Vercel ist unter dem EU-U.S. Data Privacy Framework zertifiziert; die Übermittlung in die USA erfolgt auf Grundlage des Angemessenheitsbeschlusses der EU-Kommission (Art. 45 DSGVO) bzw. der EU-Standardvertragsklauseln. Weitere Informationen: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">vercel.com/legal/privacy-policy</a>.</p>
+
+<h2>3. Anfrageformular und E-Mail-Versand über Resend</h2>
+<p>Wenn Sie uns über das Anfrageformular kontaktieren, verarbeiten wir die von Ihnen eingegebenen Daten (Name, Telefonnummer, optional E-Mail-Adresse, gewünschte Leistung und Ihre Nachricht), um Ihre Anfrage zu bearbeiten und Ihnen ein Angebot zu erstellen. Pflichtfelder sind als solche gekennzeichnet.</p>
+<p>Die Anfrage wird uns per E-Mail über den Dienst Resend (Resend, Inc., 2261 Market Street #5039, San Francisco, CA 94114, USA) zugestellt. Resend verarbeitet die Daten in unserem Auftrag; die Verarbeitung erfolgt über Server in der EU (Region Irland). Mit Resend besteht ein Vertrag zur Auftragsverarbeitung. Soweit dennoch Daten in die USA übermittelt werden, erfolgt dies auf Grundlage der EU-Standardvertragsklauseln bzw. des EU-U.S. Data Privacy Framework.</p>
+<p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Durchführung vorvertraglicher Maßnahmen) sowie Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie mit dem Setzen des Häkchens erteilen und jederzeit widerrufen können. Die Daten werden gelöscht, sobald Ihre Anfrage abschließend bearbeitet ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+
+<h2>4. Kontakt per E-Mail oder Telefon</h2>
+<p>Wenn Sie uns per E-Mail oder Telefon kontaktieren, verarbeiten wir Ihre Angaben ausschließlich zur Bearbeitung Ihres Anliegens (Art. 6 Abs. 1 lit. b DSGVO bzw. lit. f DSGVO). Die Daten werden gelöscht, sobald sie nicht mehr erforderlich sind, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+
+<h2>5. Google Maps</h2>
+<p>Auf der Kontaktseite können Sie eine Karte von Google Maps (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) laden. Die Karte wird erst geladen, wenn Sie auf „Karte anzeigen“ klicken. Erst dann werden Daten wie Ihre IP-Adresse an Google übertragen, ggf. auch in die USA. Rechtsgrundlage ist Ihre Einwilligung durch den Klick (Art. 6 Abs. 1 lit. a DSGVO). Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+<h2>6. Schriften, Bilder und Videos</h2>
+<p>Schriftarten, Bilder und Videos werden direkt von unserem Hosting-Anbieter ausgeliefert. Es findet keine Verbindung zu Servern von Google Fonts oder anderen externen Schriftanbietern statt.</p>
+
+<h2>7. Cookies und Analyse</h2>
+<p>Diese Website setzt derzeit keine Cookies und verwendet keine Analyse- oder Werbe-Tracking-Dienste. Sollten wir künftig solche Dienste (z. B. Google Ads Conversion-Tracking) einsetzen, holen wir vorher Ihre Einwilligung ein und ergänzen diese Datenschutzerklärung.</p>
+
+<h2>8. Ihre Rechte</h2>
+<p>Sie haben jederzeit das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO), Datenübertragbarkeit (Art. 20 DSGVO) sowie Widerspruch gegen die Verarbeitung (Art. 21 DSGVO). Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO). Wenden Sie sich dazu einfach an die oben genannten Kontaktdaten.</p>
+
+<h2>9. Beschwerderecht</h2>
+<p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Zuständig ist die Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen, Kavalleriestraße 2–4, 40213 Düsseldorf, <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener">www.ldi.nrw.de</a>.</p>
+
+<h2>10. SSL-/TLS-Verschlüsselung</h2>
+<p>Diese Website nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an „https://“ in der Adresszeile Ihres Browsers.</p>
+
+<p style="margin-top:32px;color:var(--muted)">Stand: Oktober 2026</p>''')
 
 if __name__ == "__main__":
     build_home()

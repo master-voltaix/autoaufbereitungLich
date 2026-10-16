@@ -155,8 +155,10 @@ a:hover > .arrow, .btn:hover .arrow, .card:hover .arrow { transform: translateX(
 /* ---------- Vorteile ---------- */
 .benefits { position: relative; z-index: 2; margin-top: clamp(-92px, -6vw, -60px); }
 .benefits__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(12px, 1.4vw, 22px); }
-.benefit { padding: clamp(22px, 2.2vw, 32px); background: #fff; border-radius: 12px; box-shadow: var(--shadow-lg); border-bottom: 3px solid transparent; transition: transform .3s var(--ease), border-color .3s; }
-.benefit:hover { transform: translateY(-6px); border-color: var(--red); }
+.benefit { padding: clamp(22px, 2.2vw, 32px); background: #fff; border-radius: 12px; box-shadow: var(--shadow-lg); transition: transform .3s var(--ease); }
+.benefit:hover { transform: translateY(-6px); }
+.benefits__grid--inline .benefit { box-shadow: none; border: 1px solid var(--line); }
+.hero--flat .hero__inner { padding-bottom: clamp(48px, 6.5vw, 96px); }
 .benefit h3 { margin: 18px 0 8px; }
 .benefit p { margin: 0; font-size: 1rem; line-height: 1.55; }
 .pic { width: 56px; height: 56px; fill: none; stroke: var(--navy); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; overflow: visible; }
@@ -179,6 +181,7 @@ a:hover > .arrow, .btn:hover .arrow, .card:hover .arrow { transform: translateX(
 
 /* Leistungskarten */
 .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 1.5vw, 24px); }
+.cards--5 { grid-template-columns: repeat(5, 1fr); }
 .card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; transition: transform .35s var(--ease), box-shadow .35s, border-color .35s; }
 .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: transparent; }
 .card__img { position: relative; aspect-ratio: 16 / 10.5; overflow: hidden; background: var(--navy-deep); }
@@ -235,9 +238,11 @@ a:hover > .arrow, .btn:hover .arrow, .card:hover .arrow { transform: translateX(
 
 /* Leistungsumfang */
 .incl { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.4vw, 20px); }
-.incl li { display: flex; align-items: center; gap: 14px; padding: 20px 22px; border: 1px solid rgba(255, 255, 255, .14); border-radius: 10px; background: rgba(255, 255, 255, .04); color: #fff; font-weight: 500; font-size: 1.0625rem; line-height: 1.35; transition: background-color .25s, border-color .25s, transform .25s var(--ease); }
-.incl li:hover { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .3); transform: translateY(-3px); }
-.incl li::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 2px; background: var(--red); }
+.incl li { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); font-weight: 600; font-size: 1.0625rem; line-height: 1.35; transition: border-color .25s, box-shadow .25s, transform .25s var(--ease); }
+.incl li:hover { border-color: transparent; box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.incl__ico { flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 10px; background: #fdeeee; color: var(--red); transition: background-color .25s, color .25s; }
+.incl li:hover .incl__ico { background: var(--red); color: #fff; }
+.incl__ico svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.700; stroke-linecap: round; stroke-linejoin: round; }
 
 /* Einzugsgebiet */
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
@@ -248,6 +253,8 @@ a:hover > .arrow, .btn:hover .arrow, .card:hover .arrow { transform: translateX(
 .faq details { border-bottom: 1px solid var(--line); }
 .faq summary { position: relative; padding: 22px 48px 22px 0; cursor: pointer; list-style: none; font-size: 1.1875rem; font-weight: 600; color: var(--ink); transition: color .2s; }
 .faq summary:hover { color: var(--red); }
+.faq summary:focus { outline: none; }
+.faq summary:focus-visible { color: var(--red); text-decoration: underline; text-underline-offset: 4px; }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::before, .faq summary::after { content: ""; position: absolute; right: 8px; top: 50%; width: 16px; height: 2px; background: var(--red); transition: transform .3s var(--ease); }
 .faq summary::after { transform: rotate(90deg); }
@@ -332,7 +339,7 @@ a:hover > .arrow, .btn:hover .arrow, .card:hover .arrow { transform: translateX(
 @media (max-width: 1320px) {
   .header__phone small { display: none; }
   .header__cta .btn { display: none; }
-  .cards { grid-template-columns: repeat(2, 1fr); }
+  .cards, .cards--5 { grid-template-columns: repeat(2, 1fr); }
   .benefits__grid { grid-template-columns: repeat(2, 1fr); }
   .incl { grid-template-columns: repeat(2, 1fr); }
 }
@@ -415,7 +422,8 @@ a:hover > .arrow, .btn:hover .arrow, .card:hover .arrow { transform: translateX(
   .flow li:not(:last-child)::after { content: ""; position: absolute; left: 22px; top: 50px; bottom: 4px; width: 2px; background: var(--line); }
   .flow h3 { margin: 2px 0 4px; }
   .incl { grid-template-columns: 1fr; gap: 8px; }
-  .incl li { padding: 15px 16px; font-size: 1rem; }
+  .incl li { padding: 12px 14px; font-size: 1rem; gap: 14px; }
+  .incl__ico { width: 42px; height: 42px; }
   .faq summary { padding: 17px 40px 17px 0; font-size: 1.0625rem; }
   .form__row { grid-template-columns: 1fr; }
   .form input[type="text"], .form input[type="tel"], .form input[type="email"], .form select, .form textarea { font-size: 16px; }

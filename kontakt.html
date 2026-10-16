@@ -43,7 +43,7 @@
     <nav class="nav" id="nav" aria-label="Hauptnavigation">
       <ul>
         <li class="has-sub"><a href="leistungen.html">Leistungen</a>
-          <ul class="sub"><li><a href="autoaufbereitung.html">Autoaufbereitung komplett</a></li><li><a href="innenraumreinigung.html">Innenraumreinigung</a></li><li><a href="aussenaufbereitung.html">Außenaufbereitung &amp; Handwäsche</a></li><li><a href="lackpolitur.html">Lackpolitur</a></li><li><a href="keramikversiegelung.html">Keramikversiegelung</a></li><li><a href="lackierung.html">Lackierung</a></li><li><a href="smart-repair.html">Smart Repair</a></li><li><a href="leasingrueckgabe.html">Leasingrückgabe &amp; Verkauf</a></li></ul>
+          <ul class="sub"><li><a href="autoaufbereitung.html">Autoaufbereitung komplett</a></li><li><a href="innenraumreinigung.html">Innenraumreinigung</a></li><li><a href="aussenaufbereitung.html">Außenaufbereitung &amp; Handwäsche</a></li><li><a href="lackpolitur.html">Lackpolitur</a></li><li><a href="keramikversiegelung.html">Keramikversiegelung</a></li><li><a href="lackierung.html">Lackierung</a></li><li><a href="smart-repair.html">Smart Repair</a></li><li><a href="leasingrueckgabe.html">Leasingrückgabe &amp; Verkauf</a></li><li><a href="gutachten.html">Kfz-Gutachten</a></li><li><a href="unfallschadenabwicklung.html">Unfallschadenabwicklung</a></li></ul>
         </li>
         <li><a href="lackierung.html">Lackierung</a></li>
         <li><a href="ueber-uns.html">Über uns</a></li>
@@ -65,7 +65,7 @@
   <div class="hero__media" aria-hidden="true"><img src="assets/img/fahrzeug-komplett.webp" alt="" fetchpriority="high" width="1536" height="1024"></div>
   <div class="container hero__inner">
     <div>
-      <ol class="crumbs"><li><a href="index.html">Startseite</a></li><li>Kontakt &amp; Anfahrt</li></ol>
+      <p class="hero__place"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Walter-Frese-Str. 16 · 42799 Leichlingen</p>
       <h1>Kontakt &amp; Anfahrt</h1>
       <p class="lead">Rufen Sie an oder schreiben Sie uns. Je genauer Sie Fahrzeug und Wunsch beschreiben, desto schneller können wir Ihnen ein Angebot machen.</p>
       <div class="hero__btns">
@@ -81,11 +81,11 @@
     <div class="formcard" id="anfrage">
   <h2 class="formcard__title">Kostenloses Angebot anfordern</h2>
   <p class="formcard__sub">In 1 Minute ausgefüllt – wir melden uns bei Ihnen.</p>
-  <form class="form js-form" action="send.php" method="post" novalidate>
+  <form class="form js-form" action="/api/send" method="post" novalidate>
     <label>Name *<input type="text" name="name" autocomplete="name" required></label>
     <label>Telefon *<input type="tel" name="telefon" autocomplete="tel" inputmode="tel" required></label>
     <label>Gewünschte Leistung
-      <select name="leistung"><option value="">Bitte auswählen</option><option>Komplettaufbereitung innen &amp; außen</option><option>Innenraumreinigung</option><option>Außenaufbereitung / Handwäsche</option><option>Lackpolitur</option><option>Keramikversiegelung</option><option>Lackierung</option><option>Smart Repair</option><option>Leasingrückgabe / Verkaufsaufbereitung</option><option>Sonstiges</option></select>
+      <select name="leistung"><option value="">Bitte auswählen</option><option>Komplettaufbereitung innen &amp; außen</option><option>Innenraumreinigung</option><option>Außenaufbereitung / Handwäsche</option><option>Lackpolitur</option><option>Keramikversiegelung</option><option>Lackierung</option><option>Smart Repair</option><option>Leasingrückgabe / Verkaufsaufbereitung</option><option>Kfz-Gutachten</option><option>Unfallschadenabwicklung</option><option>Sonstiges</option></select>
     </label>
     <input type="hidden" name="email" value=""><input type="hidden" name="nachricht" value="">
     <label class="form__hp" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
@@ -157,11 +157,11 @@
     <div class="rv rv-r"><div class="formcard formcard--flat" id="anfrage-unten">
   <h2 class="formcard__title">Ihre Anfrage</h2>
   <p class="formcard__sub">Je genauer die Angaben, desto schneller das Angebot.</p>
-  <form class="form js-form" action="send.php" method="post" novalidate>
+  <form class="form js-form" action="/api/send" method="post" novalidate>
     <label>Name *<input type="text" name="name" autocomplete="name" required></label>
     <label>Telefon *<input type="tel" name="telefon" autocomplete="tel" inputmode="tel" required></label>
     <label>Gewünschte Leistung
-      <select name="leistung"><option value="">Bitte auswählen</option><option>Komplettaufbereitung innen &amp; außen</option><option>Innenraumreinigung</option><option>Außenaufbereitung / Handwäsche</option><option>Lackpolitur</option><option>Keramikversiegelung</option><option>Lackierung</option><option>Smart Repair</option><option>Leasingrückgabe / Verkaufsaufbereitung</option><option>Sonstiges</option></select>
+      <select name="leistung"><option value="">Bitte auswählen</option><option>Komplettaufbereitung innen &amp; außen</option><option>Innenraumreinigung</option><option>Außenaufbereitung / Handwäsche</option><option>Lackpolitur</option><option>Keramikversiegelung</option><option>Lackierung</option><option>Smart Repair</option><option>Leasingrückgabe / Verkaufsaufbereitung</option><option>Kfz-Gutachten</option><option>Unfallschadenabwicklung</option><option>Sonstiges</option></select>
     </label>
     <label>E-Mail (optional)<input type="email" name="email" autocomplete="email" inputmode="email"></label>
     <label>Ihre Nachricht (optional)<textarea name="nachricht" rows="3" placeholder="Fahrzeug, Zustand, Wunschtermin …"></textarea></label>
@@ -186,7 +186,7 @@
     </div>
     <div>
       <h4>Leistungen</h4>
-      <ul><li><a href="autoaufbereitung.html">Komplettaufbereitung</a></li><li><a href="innenraumreinigung.html">Innenraumreinigung</a></li><li><a href="aussenaufbereitung.html">Außenaufbereitung</a></li><li><a href="lackpolitur.html">Lackpolitur</a></li><li><a href="keramikversiegelung.html">Keramikversiegelung</a></li><li><a href="lackierung.html">Lackierung</a></li><li><a href="smart-repair.html">Smart Repair</a></li><li><a href="leasingrueckgabe.html">Leasingrückgabe</a></li></ul>
+      <ul><li><a href="autoaufbereitung.html">Komplettaufbereitung</a></li><li><a href="innenraumreinigung.html">Innenraumreinigung</a></li><li><a href="aussenaufbereitung.html">Außenaufbereitung</a></li><li><a href="lackpolitur.html">Lackpolitur</a></li><li><a href="keramikversiegelung.html">Keramikversiegelung</a></li><li><a href="lackierung.html">Lackierung</a></li><li><a href="smart-repair.html">Smart Repair</a></li><li><a href="leasingrueckgabe.html">Leasingrückgabe</a></li><li><a href="gutachten.html">Kfz-Gutachten</a></li><li><a href="unfallschadenabwicklung.html">Unfallschadenabwicklung</a></li></ul>
     </div>
     <div>
       <h4>Betrieb</h4>

@@ -44,7 +44,7 @@
     <nav class="nav" id="nav" aria-label="Hauptnavigation">
       <ul>
         <li class="has-sub"><a href="leistungen.html">Leistungen</a>
-          <ul class="sub"><li><a href="autoaufbereitung.html">Autoaufbereitung komplett</a></li><li><a href="innenraumreinigung.html">Innenraumreinigung</a></li><li><a href="aussenaufbereitung.html">Außenaufbereitung &amp; Handwäsche</a></li><li><a href="lackpolitur.html" aria-current="page">Lackpolitur</a></li><li><a href="keramikversiegelung.html">Keramikversiegelung</a></li><li><a href="lackierung.html">Lackierung</a></li><li><a href="smart-repair.html">Smart Repair</a></li><li><a href="leasingrueckgabe.html">Leasingrückgabe &amp; Verkauf</a></li></ul>
+          <ul class="sub"><li><a href="autoaufbereitung.html">Autoaufbereitung komplett</a></li><li><a href="innenraumreinigung.html">Innenraumreinigung</a></li><li><a href="aussenaufbereitung.html">Außenaufbereitung &amp; Handwäsche</a></li><li><a href="lackpolitur.html" aria-current="page">Lackpolitur</a></li><li><a href="keramikversiegelung.html">Keramikversiegelung</a></li><li><a href="lackierung.html">Lackierung</a></li><li><a href="smart-repair.html">Smart Repair</a></li><li><a href="leasingrueckgabe.html">Leasingrückgabe &amp; Verkauf</a></li><li><a href="gutachten.html">Kfz-Gutachten</a></li><li><a href="unfallschadenabwicklung.html">Unfallschadenabwicklung</a></li></ul>
         </li>
         <li><a href="lackierung.html">Lackierung</a></li>
         <li><a href="ueber-uns.html">Über uns</a></li>
@@ -62,11 +62,11 @@
   </div>
 </header>
 <main id="inhalt">
-<section class="hero hero--sub">
+<section class="hero hero--sub hero--flat">
   <div class="hero__media" aria-hidden="true"><img src="assets/img/lackpolitur.webp" alt="" fetchpriority="high" width="1536" height="1024"></div>
   <div class="container hero__inner">
     <div>
-      <ol class="crumbs"><li><a href="index.html">Startseite</a></li><li><a href="leistungen.html">Leistungen</a></li><li>Lackpolitur</li></ol>
+      <p class="hero__place"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Walter-Frese-Str. 16 · 42799 Leichlingen</p>
       <h1>Lackpolitur <em>in Leichlingen</em></h1>
       <p class="lead">Feine Kratzer, Hologramme und matte Stellen maschinell entfernt – damit der Lack wieder Tiefe und Glanz bekommt.</p>
       <div class="hero__btns">
@@ -82,11 +82,11 @@
     <div class="formcard" id="anfrage">
   <h2 class="formcard__title">Angebot anfragen</h2>
   <p class="formcard__sub">In 1 Minute ausgefüllt – wir melden uns bei Ihnen.</p>
-  <form class="form js-form" action="send.php" method="post" novalidate>
+  <form class="form js-form" action="/api/send" method="post" novalidate>
     <label>Name *<input type="text" name="name" autocomplete="name" required></label>
     <label>Telefon *<input type="tel" name="telefon" autocomplete="tel" inputmode="tel" required></label>
     <label>Gewünschte Leistung
-      <select name="leistung"><option value="">Bitte auswählen</option><option>Komplettaufbereitung innen &amp; außen</option><option>Innenraumreinigung</option><option>Außenaufbereitung / Handwäsche</option><option selected>Lackpolitur</option><option>Keramikversiegelung</option><option>Lackierung</option><option>Smart Repair</option><option>Leasingrückgabe / Verkaufsaufbereitung</option><option>Sonstiges</option></select>
+      <select name="leistung"><option value="">Bitte auswählen</option><option>Komplettaufbereitung innen &amp; außen</option><option>Innenraumreinigung</option><option>Außenaufbereitung / Handwäsche</option><option selected>Lackpolitur</option><option>Keramikversiegelung</option><option>Lackierung</option><option>Smart Repair</option><option>Leasingrückgabe / Verkaufsaufbereitung</option><option>Kfz-Gutachten</option><option>Unfallschadenabwicklung</option><option>Sonstiges</option></select>
     </label>
     <input type="hidden" name="email" value=""><input type="hidden" name="nachricht" value="">
     <label class="form__hp" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
@@ -97,9 +97,36 @@
   </form>
 </div>
   </div>
-</section><section class="benefits" aria-label="Ihre Vorteile">
+</section>
+<section class="sec">
   <div class="container">
-    <ul class="benefits__grid"><li class="benefit rv" style="--d:0.00s">
+    <div class="sec__head rv">
+      <span class="kicker">Leistungsumfang</span>
+      <h2>Das gehört zur Lackpolitur</h2>
+    </div>
+    <ul class="incl"><li class="rv" style="--d:0.00s"><span class="incl__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3l1.900 5.100L18 10l-5.100 1.900L11 17l-1.900-5.100L4 10l5.100-1.900z"/><path d="M19 15v5M16.500 17.500h5"/></svg></span>Gründliche Lackreinigung vor der Politur</li><li class="rv" style="--d:0.08s"><span class="incl__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3l1.900 5.100L18 10l-5.100 1.900L11 17l-1.900-5.100L4 10l5.100-1.900z"/><path d="M19 15v5M16.500 17.500h5"/></svg></span>Maschinelle Politur in mehreren Stufen</li><li class="rv" style="--d:0.16s"><span class="incl__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3l1.900 5.100L18 10l-5.100 1.900L11 17l-1.900-5.100L4 10l5.100-1.900z"/><path d="M19 15v5M16.500 17.500h5"/></svg></span>Waschkratzer und Hologramme entfernen</li><li class="rv" style="--d:0.00s"><span class="incl__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3l1.900 5.100L18 10l-5.100 1.900L11 17l-1.900-5.100L4 10l5.100-1.900z"/><path d="M19 15v5M16.500 17.500h5"/></svg></span>Matte und verwitterte Stellen auffrischen</li><li class="rv" style="--d:0.08s"><span class="incl__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.500 17l2.300-8.500A2 2 0 0 1 7.700 7h8.600a2 2 0 0 1 1.900 1.500L20.500 17z"/><path d="M9 14l2.500-3.500M13 14.500l1.500-2"/></svg></span>Scheinwerfer aufbereiten auf Wunsch</li><li class="rv" style="--d:0.16s"><span class="incl__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.500-3 8-7 10-4-2-7-5.500-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>Abschließende Lackversiegelung</li></ul>
+  </div>
+</section>
+
+<section class="sec sec--soft">
+  <div class="container two">
+    <div class="rv rv-l">
+      <span class="kicker">Lackpolitur</span>
+      <h2>Wenn der Lack stumpf geworden ist</h2>
+      <p>Waschstraßen, Witterung und die Jahre hinterlassen Spuren: feine Kratzer, die im Sonnenlicht wie Spinnweben aussehen, und ein Lack, der an Tiefe verloren hat. Mit einer maschinellen Politur tragen wir diese Spuren Schritt für Schritt ab.</p><p>Wie viele Durchgänge nötig sind, hängt vom Zustand und von der Lackhärte ab. Das besprechen wir vorab am Fahrzeug.</p>
+      <div class="btns">
+        <a class="btn btn--red" href="#anfrage">Angebot anfragen <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--line" href="tel:+491777804146" data-track="phone_click"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>0177 / 780 41 46</a>
+      </div>
+    </div>
+    <div class="photo rv rv-r"><img src="assets/img/lack-abperleffekt.webp" alt="Wasserperlen auf poliertem Lack" loading="lazy" width="1536" height="1024"></div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="sec__head rv"><span class="kicker">Ihre Vorteile</span><h2>Darauf können Sie sich verlassen</h2></div>
+    <ul class="benefits__grid benefits__grid--inline"><li class="benefit rv" style="--d:0.00s">
         <svg class="pic" viewBox="0 0 48 48" aria-hidden="true"><path d="M5 31v-5l4-2 4.500-7.500A3 3 0 0 1 16 15h16a3 3 0 0 1 2.500 1.500L39 24l4 2v5a2 2 0 0 1-2 2h-2"/><path d="M11 33H7a2 2 0 0 1-2-2"/><path d="M19 33h10"/><circle cx="15" cy="33" r="4"/><circle cx="33" cy="33" r="4"/><path d="M11 24h26"/><path class="ac" d="M40 4v8M36 8h8"/><path class="ac" d="M7 7v5M4.500 9.500h5"/></svg>
         <h3>Handarbeit statt Waschstraße</h3>
         <p>Jedes Fahrzeug wird von Hand bearbeitet – schonend für Lack und Material.</p>
@@ -118,32 +145,8 @@
       </li></ul>
   </div>
 </section>
-<section class="sec">
-  <div class="container two">
-    <div class="rv rv-l">
-      <span class="kicker">Lackpolitur</span>
-      <h2>Wenn der Lack stumpf geworden ist</h2>
-      <p>Waschstraßen, Witterung und die Jahre hinterlassen Spuren: feine Kratzer, die im Sonnenlicht wie Spinnweben aussehen, und ein Lack, der an Tiefe verloren hat. Mit einer maschinellen Politur tragen wir diese Spuren Schritt für Schritt ab.</p><p>Wie viele Durchgänge nötig sind, hängt vom Zustand und von der Lackhärte ab. Das besprechen wir vorab am Fahrzeug.</p>
-      <div class="btns">
-        <a class="btn btn--red" href="#anfrage">Angebot anfragen <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn--line" href="tel:+491777804146" data-track="phone_click"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>0177 / 780 41 46</a>
-      </div>
-    </div>
-    <div class="photo rv rv-r"><img src="assets/img/lack-abperleffekt.webp" alt="Wasserperlen auf poliertem Lack" loading="lazy" width="1536" height="1024"></div>
-  </div>
-</section>
 
-<section class="sec sec--navy">
-  <div class="container">
-    <div class="sec__head rv">
-      <span class="kicker">Leistungsumfang</span>
-      <h2>Das gehört dazu</h2>
-    </div>
-    <ul class="incl"><li class="rv" style="--d:0.00s">Gründliche Lackreinigung vor der Politur</li><li class="rv" style="--d:0.08s">Maschinelle Politur in mehreren Stufen</li><li class="rv" style="--d:0.16s">Waschkratzer und Hologramme entfernen</li><li class="rv" style="--d:0.00s">Matte und verwitterte Stellen auffrischen</li><li class="rv" style="--d:0.08s">Scheinwerfer aufbereiten auf Wunsch</li><li class="rv" style="--d:0.16s">Abschließende Lackversiegelung</li></ul>
-  </div>
-</section>
-
-<section class="sec">
+<section class="sec sec--soft">
   <div class="container">
     <div class="sec__head rv">
       <span class="kicker">Ablauf</span>
@@ -158,7 +161,7 @@
   </div>
 </section>
 
-<section class="sec sec--soft">
+<section class="sec">
   <div class="container two two--top">
     <div class="rv">
       <span class="kicker">Gut zu wissen</span>
@@ -166,11 +169,11 @@
       <p class="lead">Oberflächliche Kratzer lassen sich in aller Regel vollständig entfernen. Geht ein Kratzer bis auf die Grundierung, hilft nur noch eine Lackreparatur. Auch das können wir für Sie übernehmen – siehe Smart Repair und Lackierung.</p>
       <div class="btns"><a class="btn btn--navy" href="#anfrage">Jetzt anfragen <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></div>
     </div>
-    <div class="rv" style="--d:.1s"><div class="faq"><details open><summary>Verschwinden alle Kratzer?</summary><p>Oberflächliche Kratzer ja. Als Faustregel gilt: Bleibt der Fingernagel im Kratzer hängen, ist er zu tief für eine Politur.</p></details><details><summary>Schadet eine Politur dem Lack?</summary><p>Bei fachgerechter Ausführung nicht. Es wird nur so viel Material abgetragen wie nötig.</p></details><details><summary>Wie lange hält das Ergebnis?</summary><p>Das hängt von der Pflege danach ab. Mit einer Versiegelung und schonender Wäsche bleibt der Glanz deutlich länger erhalten.</p></details></div></div>
+    <div class="rv" style="--d:.1s"><div class="faq"><details open><summary>Verschwinden alle Kratzer?</summary><p>Oberflächliche Kratzer ja. Als Faustregel gilt: Bleibt der Fingernagel im Kratzer hängen, ist er zu tief für eine Politur.</p></details><details><summary>Schadet eine Politur dem Lack?</summary><p>Bei fachgerechter Ausführung nicht. Es wird nur so viel Material abgetragen wie nötig.</p></details><details><summary>Wie lange hält das Ergebnis?</summary><p>Das hängt von der Pflege danach ab. Mit einer Versiegelung und schonender Wäsche bleibt der Glanz deutlich länger erhalten.</p></details><details><summary>Wie bekomme ich ein Angebot?</summary><p>Am schnellsten über das Formular auf dieser Seite oder per Anruf. Beschreiben Sie kurz Fahrzeug und Zustand – gern auch mit Fotos per E-Mail. Sie erhalten dann ein unverbindliches Angebot.</p></details><details><summary>Brauche ich einen Termin?</summary><p>Ja, wir arbeiten nach Terminvereinbarung. So können wir uns ohne Zeitdruck um Ihr Fahrzeug kümmern.</p></details><details><summary>Kann ich mehrere Leistungen kombinieren?</summary><p>Ja. Aufbereitung, Politur und Lackarbeiten lassen sich gut in einem Termin verbinden. Wir stimmen die Reihenfolge der Arbeiten für Sie ab.</p></details><details><summary>Aus welchen Orten kommen Ihre Kunden?</summary><p>Unser Betrieb liegt in Leichlingen. Viele Kunden kommen auch aus Langenfeld, Leverkusen, Solingen und Burscheid.</p></details></div></div>
   </div>
 </section>
 
-<section class="sec">
+<section class="sec sec--soft">
   <div class="container">
     <div class="sec__head sec__head--row rv">
       <div><span class="kicker">Passt dazu</span><h2>Weitere Leistungen</h2></div>
@@ -226,11 +229,11 @@
     <div class="rv rv-r"><div class="formcard formcard--flat" id="anfrage-unten">
   <h2 class="formcard__title">Ihre Anfrage</h2>
   <p class="formcard__sub">Je genauer die Angaben, desto schneller das Angebot.</p>
-  <form class="form js-form" action="send.php" method="post" novalidate>
+  <form class="form js-form" action="/api/send" method="post" novalidate>
     <label>Name *<input type="text" name="name" autocomplete="name" required></label>
     <label>Telefon *<input type="tel" name="telefon" autocomplete="tel" inputmode="tel" required></label>
     <label>Gewünschte Leistung
-      <select name="leistung"><option value="">Bitte auswählen</option><option>Komplettaufbereitung innen &amp; außen</option><option>Innenraumreinigung</option><option>Außenaufbereitung / Handwäsche</option><option selected>Lackpolitur</option><option>Keramikversiegelung</option><option>Lackierung</option><option>Smart Repair</option><option>Leasingrückgabe / Verkaufsaufbereitung</option><option>Sonstiges</option></select>
+      <select name="leistung"><option value="">Bitte auswählen</option><option>Komplettaufbereitung innen &amp; außen</option><option>Innenraumreinigung</option><option>Außenaufbereitung / Handwäsche</option><option selected>Lackpolitur</option><option>Keramikversiegelung</option><option>Lackierung</option><option>Smart Repair</option><option>Leasingrückgabe / Verkaufsaufbereitung</option><option>Kfz-Gutachten</option><option>Unfallschadenabwicklung</option><option>Sonstiges</option></select>
     </label>
     <label>E-Mail (optional)<input type="email" name="email" autocomplete="email" inputmode="email"></label>
     <label>Ihre Nachricht (optional)<textarea name="nachricht" rows="3" placeholder="Fahrzeug, Zustand, Wunschtermin …"></textarea></label>
@@ -255,7 +258,7 @@
     </div>
     <div>
       <h4>Leistungen</h4>
-      <ul><li><a href="autoaufbereitung.html">Komplettaufbereitung</a></li><li><a href="innenraumreinigung.html">Innenraumreinigung</a></li><li><a href="aussenaufbereitung.html">Außenaufbereitung</a></li><li><a href="lackpolitur.html">Lackpolitur</a></li><li><a href="keramikversiegelung.html">Keramikversiegelung</a></li><li><a href="lackierung.html">Lackierung</a></li><li><a href="smart-repair.html">Smart Repair</a></li><li><a href="leasingrueckgabe.html">Leasingrückgabe</a></li></ul>
+      <ul><li><a href="autoaufbereitung.html">Komplettaufbereitung</a></li><li><a href="innenraumreinigung.html">Innenraumreinigung</a></li><li><a href="aussenaufbereitung.html">Außenaufbereitung</a></li><li><a href="lackpolitur.html">Lackpolitur</a></li><li><a href="keramikversiegelung.html">Keramikversiegelung</a></li><li><a href="lackierung.html">Lackierung</a></li><li><a href="smart-repair.html">Smart Repair</a></li><li><a href="leasingrueckgabe.html">Leasingrückgabe</a></li><li><a href="gutachten.html">Kfz-Gutachten</a></li><li><a href="unfallschadenabwicklung.html">Unfallschadenabwicklung</a></li></ul>
     </div>
     <div>
       <h4>Betrieb</h4>
